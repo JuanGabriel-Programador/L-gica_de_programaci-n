@@ -1,0 +1,70 @@
+<div class="container">
+    <h2 class="main-title">Mis cursos</h2>
+    <section class="container-products">
+      <div class="product">
+        <img src="Img/1704723958_MIX SP 250 (1).png" alt="" class="product__img">
+        <div class="product__description">
+          <h3 class="product__title">Titulo</h3>
+          <span class="product__price">$2000</span>
+        </div>
+        <div class="product__agregar">
+                <button></button>
+                <button></button>
+                <button></button>
+
+          </div>
+      </div>
+
+
+
+      <table class="table">
+        <thead>
+            <tr>
+<th scope="col">ID</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Imagen Promocional</th>
+            <th scope="col">Video</th>
+            <th scope="col">Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($todos_los_cursos as $cursos){?>
+            <tr>
+                <th scope="row"><?= $cursos['Id'];?></th>
+                <th><?= $cursos['Titulo'];?></th>
+                <th><?= $cursos['Descripcion'];?></th>
+                <th class="border text-center"><img src="./Img/<?= $cursos['Imagen_promocional'];?> " class="border" width="100px" height="100px"></th>
+                <th>
+                        <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Preview Video
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="pauseVid()"></button>
+                        </div>
+                        <div class="modal-body">
+                        <iframe id="video_1"width="100%" height="300px" src="https://www.youtube.com/embed/DluhvY4eVns?si=FbcXPL8y-qSUXMQj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </th>
+                <th><?= $cursos['Precio'];?></th>
+                <th>
+                    <form action="" method="post">
+                    <input type="hidden" name="txt_id" id="txt_id" value="<?= $cursos['Id'];?>">
+                    <input type="submit" class="btn btn-info" value="Seleccionar" name="accion">
+                    <input type="submit" class="btn btn-danger" value="Eliminar" name="accion">
+                    </form>
+                </th>
+            </tr>
+            <?php }?>
+        </tbody>
+    </table>

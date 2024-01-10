@@ -1,0 +1,124 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Modificar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background-color: red;
+    font-size: 16px;
+}
+.desaparecer{
+    overflow: hidden;
+}
+/*--------------------- Cursos--------------------*/
+
+.container-cursos{
+  width: 100%;
+  margin:  0 ;
+}
+.container-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(300px,1fr));
+    grid-gap: 15px;
+  }
+  .product {
+    max-height: 310px;
+    box-shadow: 1px 1px 5px #000000;
+    border: 1px solid #747171;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+/*.product:before {
+    content: "New";
+    background: #2a01e4;
+    padding: 10px;
+    width: 60px;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    transform: rotate(-90deg);
+    color: white;
+  } */
+  .contenedor_imagen,.product__description{
+    height: 60%;
+  }
+  .contedor_toda_descripcion,.product__agregar{
+    height: 40%;
+  }
+  .product__img{
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+  }
+  .product__img:hover{
+    scale: 1.1;
+  }
+  .product__description{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .product__price {
+    color: #FF4E00;
+    font-weight: bold;
+  }
+  .product__icon {
+    display: block;
+    margin-top: 10px;
+  }
+  .product:hover .product__icon {
+    color: #FF4E00;
+  }
+  .product__agregar{
+      margin-top: 10px;
+      display: flex;
+      gap: 5px;
+      font-size:16px ;
+  
+  }
+  
+
+    
+  .btn_descripcion- , .btn_agregar_{
+      padding: 8px;
+      border: 1px solid #000;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: rgb(23, 75, 23);
+  }
+  .btn_descripcion-{
+      background-color: rgb(5, 72, 94);
+  }
+  .btn_descripcion-:hover , .btn_agregar_:hover{
+      background-color: rgb(140, 7, 7);
+  }
+
+  /*@media screen and (min-width:768px) {
+    .container-products {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px;
+    }
+    
+    }
+  
+  /*Estilos para tablet*/
+  /*@media screen and (min-width:1024px){
+    .container-products{
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 15px;
+      margin: 0 1px;
+    }
+    .pr{
+      font-size:100px;
+    }
+  }
+  
